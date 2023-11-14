@@ -50,7 +50,6 @@ const getUser = (userId) => {
 // MongoURL = mongodb+srv://heatkimnak:EnITmN2hkFbRiTzy@cluster0.ffsxyzk.mongodb.net/mernchat?retryWrites=true&w=majority
 // TOKEN_SECRET = sckjlosacnlklasclkas
 
-
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('send_user', (user) => {
