@@ -18,7 +18,7 @@ function App() {
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
   useEffect(() => {
-    setSocket(io('http://localhost:3000'));
+    setSocket(io('https://mernchat-seven.vercel.app'));
   }, [setSocket]);
   useEffect(() => {
     socket?.emit('send_user', user?.userId);
