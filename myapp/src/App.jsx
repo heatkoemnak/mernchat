@@ -13,12 +13,12 @@ import Home from './pages/Home';
 // import HeaderChat from './room/HeaderChat';
 
 function App() {
-  axios.defaults.baseURL = 'https://mernchat-seven.vercel.app';
+  axios.defaults.baseURL = 'http://localhost:3000';
   axios.defaults.withCredentials = true;
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
   useEffect(() => {
-    setSocket(io('https://mernchat-seven.vercel.app'));
+    setSocket(io('http://localhost:3000'));
   }, [setSocket]);
   useEffect(() => {
     socket?.emit('send_user', user?.userId);
