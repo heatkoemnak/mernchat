@@ -22,7 +22,7 @@ app.use(
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://mernchat-emqm.vercel.app/',
+    origin: 'https://mernchat-emqm.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
