@@ -13,7 +13,7 @@ import Home from './pages/Home';
 // import HeaderChat from './room/HeaderChat';
 
 function App() {
-  axios.defaults.baseURL = ' http://localhost:3000';
+  axios.defaults.baseURL = 'https://mernchat-seven.vercel.app';
   axios.defaults.withCredentials = true;
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
