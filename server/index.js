@@ -32,24 +32,11 @@ const AddNewUser = (userId, socketId) => {
   !OnlineUser.some((user) => user.userId == userId) &&
     OnlineUser.push({ userId, socketId });
   return OnlineUser;
-  // let isExist = false;
-  // for (let i = 0; i < OnlineUser.length; i++) {
-  //   if (OnlineUser[i].userId === userId) {
-  //     isExist = true;
-  //   }
-  // }
-  // if (!isExist) {
-  //   OnlineUser.push({ userId, socketId });
-  //   return OnlineUser;
-  // }
 };
 
 const getUser = (userId) => {
   return OnlineUser.find((u) => u.userId === userId);
 };
-// MongoURL = mongodb+srv://heatkimnak:EnITmN2hkFbRiTzy@cluster0.ffsxyzk.mongodb.net/mernchat?retryWrites=true&w=majority
-// TOKEN_SECRET = sckjlosacnlklasclkas
-// TOKEN_SECRET = "sckjlosacnlklasclkasclacs"
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -69,6 +56,7 @@ io.on('connection', (socket) => {
 });
 const mongodbURL = process.env.mongoURL;
 console.log(process.env.mongoURL);
+console.log(process.env.TOKEN_SECRET);
 
 mongoose
   .connect(mongodbURL)
