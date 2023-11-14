@@ -70,6 +70,6 @@ server.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
 
-app.use('/user', userRoute);
-app.use('/messages', MessagesRoute);
-app.use('/conversation', ConversationRoute);
+app.use('/', userRoute);
+app.use('/', MessagesRoute);
+app.use('/', ConversationRoute);

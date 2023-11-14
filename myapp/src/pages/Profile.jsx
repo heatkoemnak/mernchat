@@ -20,7 +20,7 @@ function Profile(username) {
     e.preventDefault();
     try {
       await axios
-        .post('/conversation/createCon', {
+        .post('/createCon', {
           senderId: user?.userId,
           receiverId: userProfile?._id,
         })

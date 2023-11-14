@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Messages = require('../models/messages');
-router.get('/', async (req, res) => {
+router.get('/messages', async (req, res) => {
   try {
     const messages = await Messages.find({});
     if (!messages) {
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     console.log(error);
   }
 });
-router.get('/:conversationId', async (req, res) => {
+router.get('/messages/:conversationId', async (req, res) => {
   try {
     const messages = await Messages.find({
       conversationId: req.params.conversationId,
@@ -27,7 +27,7 @@ router.get('/:conversationId', async (req, res) => {
     console.log(error);
   }
 });
-router.post('/send_message', async (req, res) => {
+router.post('/messages/send_message', async (req, res) => {
   const {
     conversationId,
     senderId,

@@ -25,7 +25,7 @@ function Login() {
       alert('fill the form');
     }
     try {
-      await axios.post('/user/login', { username, password }).then(() => {
+      await axios.post('/login', { username, password }).then(() => {
         window.location.reload();
         setUsername('');
         setPassword('');
@@ -65,7 +65,7 @@ function Login() {
           />
           <button type="submit">Login</button>
         </form>
-        <span className='reg__orr__log'>
+        <span className="reg__orr__log">
           Do not have an account?
           <Link to="/register" className="span">
             Register

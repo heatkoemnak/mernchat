@@ -30,7 +30,7 @@ function Register() {
     }
     try {
       await axios
-        .post('/user/register', {
+        .post('/register', {
           username,
           password,
         })

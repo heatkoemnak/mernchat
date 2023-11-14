@@ -31,7 +31,7 @@ function ChatContainer() {
   console.log(conMembers);
 
   const Logout = () => {
-    axios.post('/user/logout').then(() => {
+    axios.post('/logout').then(() => {
       window.location.reload();
     });
   };

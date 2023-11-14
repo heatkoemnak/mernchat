@@ -16,7 +16,7 @@ export const UserProvider = (children) => {
   const [conMembers, setConMembers] = useState(null);
 
   useEffect(() => {
-    axios.get('/user/profile').then((res) => {
+    axios.get('/profile').then((res) => {
       if (res.data) {
         setUser(res.data);
         setLoggedIn(true);

@@ -22,7 +22,7 @@ router.post('/createCon', async (req, res) => {
   }
 });
 
-router.get('/:userId', async (req, res) => {
+router.get('/conversation/:userId', async (req, res) => {
   try {
     const conversation = await Conversations.find({
       members: { $in: [req.params.userId] },
@@ -36,7 +36,7 @@ router.get('/:userId', async (req, res) => {
     console.log(error);
   }
 });
-router.get('/', async (req, res) => {
+router.get('/conversations', async (req, res) => {
   try {
     const conversations = await Conversations.find();
     if (!conversations) {
