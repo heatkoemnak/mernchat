@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  margin: 0;
+  font-family: sans-serif;
+  --primary-color: #343234;
+  --white-color: #ffff;
+}
+h2 {
+  color: var(--white-color);
+}
+p {
+  color: var(--white-color);
+}
+span {
+  color: var(--white-color);
+}
+.link {
+  text-decoration: none;
+  color: var(--white-color);
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}

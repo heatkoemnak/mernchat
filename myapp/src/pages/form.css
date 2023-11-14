@@ -1,0 +1,82 @@
+.form__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+.form__container > h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 10px;
+}
+.form__controller {
+  width: 50%;
+}
+.top__controller {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.top__controller > input {
+  padding: 15px;
+}
+.top__controller > input:focus {
+  outline: none;
+  border-bottom: 2px solid greenyellow;
+}
+.top__controller > button {
+  background-color: #ffaf01;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.top__controller > button:hover {
+  color: #ffae01;
+  transition: ease-in-out 0.32s;
+}
+.bottom__controller {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 30px;
+}
+
+.login__with {
+  display: flex;
+  align-items: center;
+  background-color: #545353;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.login__with:hover {
+  background-color: #ffae00;
+  transition: ease-in-out;
+  color: #fff;
+}
+.login__with:hover {
+  background-color: #ffb300;
+  transition: ease-in-out 0.32s;
+  color: #fff;
+}
+.reg__orr__log {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+@media screen and (min-width: 850px) {
+  .form__controller {
+    width: 22%;
+    padding: 30px;
+  }
+}

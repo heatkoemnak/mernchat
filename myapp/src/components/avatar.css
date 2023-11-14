@@ -1,0 +1,18 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #e7e7e7;
+  cursor: pointer;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+}
+.avatar:hover {
+  background-color: #fff;
+}
+.avatar > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
