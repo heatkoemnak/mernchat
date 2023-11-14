@@ -47,6 +47,9 @@ const AddNewUser = (userId, socketId) => {
 const getUser = (userId) => {
   return OnlineUser.find((u) => u.userId === userId);
 };
+// MongoURL = mongodb+srv://heatkimnak:EnITmN2hkFbRiTzy@cluster0.ffsxyzk.mongodb.net/mernchat?retryWrites=true&w=majority
+// TOKEN_SECRET = sckjlosacnlklasclkas
+
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -65,6 +68,7 @@ io.on('connection', (socket) => {
   });
 });
 const mongodbURL = process.env.mongoURL;
+console.log(process.env.mongoURL);
 
 mongoose
   .connect(mongodbURL)
