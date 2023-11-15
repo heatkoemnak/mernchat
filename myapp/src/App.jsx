@@ -10,20 +10,23 @@ import { useContext, useEffect } from 'react';
 import io from 'socket.io-client';
 import { UserContext } from './Context/UserContext';
 import Home from './pages/Home';
+
 // import HeaderChat from './room/HeaderChat';
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:3000';
+  axios.defaults.baseURL = 'http://localhost:3000/api';
+
   axios.defaults.withCredentials = true;
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
   useEffect(() => {
-    setSocket(io('http://localhost:3000'));
+    setSocket(io('http://localhost:3000/api'));
   }, [setSocket]);
   useEffect(() => {
     socket?.emit('send_user', user?.userId);
   }, [socket, user?.userId]);
 
+  console.log(axios.defaults.baseURL);
   return (
     <>
       <BrowserRouter>

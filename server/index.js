@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const port = 3000;
+
 const cors = require('cors');
 const http = require('http');
 const cookieParser = require('cookie-parser');
@@ -15,14 +15,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://mernchat-emqm.vercel.app',
     credentials: true,
   })
 );
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: 'https://mernchat-emqm.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
@@ -55,8 +55,11 @@ io.on('connection', (socket) => {
   });
 });
 const mongodbURL = process.env.mongoURL;
+const port = process.env.PORT;
 console.log(process.env.mongoURL);
 console.log(process.env.TOKEN_SECRET);
+
+console.log(port);
 
 mongoose
   .connect(mongodbURL)
@@ -70,6 +73,6 @@ server.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
 
-app.use('/', userRoute);
-app.use('/', MessagesRoute);
-app.use('/', ConversationRoute);
+app.use('/api', userRoute);
+app.use('/api', MessagesRoute);
+app.use('/api', ConversationRoute);
