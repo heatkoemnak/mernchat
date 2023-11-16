@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { UserContext } from '../Context/UserContext';
 function Room() {
   const Logout = () => {
-    axios.post('/logout').then(() => {
+    axios.post('/api/logout').then(() => {
       window.location.reload();
     });
   };

@@ -13,7 +13,7 @@ function Chat() {
   console.log(user);
 
   useEffect(() => {
-    setSocket(io('http://localhost:3000'));
+    setSocket(io('https://backenddeploy.vercel.app'));
   }, [setSocket]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Chat() {
 
   useEffect(() => {
     const GetUsers = async () => {
-      await axios.get('/user/users').then((res) => {
+      await axios.get('/api/users').then((res) => {
         setUsers(res.data);
       });
     };

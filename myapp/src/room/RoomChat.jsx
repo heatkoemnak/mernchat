@@ -9,7 +9,7 @@ function RoomChat() {
   const { user, setUsers } = useContext(UserContext);
   useEffect(() => {
     const GetUsers = async () => {
-      await axios.get('/users').then((res) => {
+      await axios.get('/api/users').then((res) => {
         setUsers(res.data);
       });
     };

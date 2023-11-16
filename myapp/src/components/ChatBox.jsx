@@ -40,7 +40,7 @@ function ChatBox() {
 
   useEffect(() => {
     const GetMessages = async () => {
-      await axios.get('/messages/' + conversationId).then((res) => {
+      await axios.get('/api/messages/' + conversationId).then((res) => {
         setReceivedData(res.data);
       });
     };
@@ -59,7 +59,7 @@ function ChatBox() {
       time: moment().format('LT'),
     };
     try {
-      await axios.post('/messages/send_message', dataToSend).then((res) => {
+      await axios.post('/api/messages/send_message', dataToSend).then((res) => {
         console.log(res.data);
       });
     } catch (error) {

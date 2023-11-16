@@ -31,13 +31,13 @@ function ChatContainer() {
   console.log(conMembers);
 
   const Logout = () => {
-    axios.post('/logout').then(() => {
+    axios.post('/api/logout').then(() => {
       window.location.reload();
     });
   };
   useEffect(() => {
     const GetConversation = async () => {
-      await axios.get('/conversations/' + id).then((res) => {
+      await axios.get('/api/conversations/' + id).then((res) => {
         setConversation(res.data);
         setConversationId(
           res.data?.find(
@@ -71,7 +71,7 @@ function ChatContainer() {
   console.log(searchChat);
   useEffect(() => {
     const GetConversationByUserId = async () => {
-      await axios.get('/conversations/' + user?.userId).then((res) => {
+      await axios.get('/api/conversations/' + user?.userId).then((res) => {
         setConMembers(res.data);
       });
     };

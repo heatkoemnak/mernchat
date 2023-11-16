@@ -25,7 +25,7 @@ function Login() {
       alert('fill the form');
     }
     try {
-      await axios.post('/login', { username, password }).then(() => {
+      await axios.post('/api/login', { username, password }).then(() => {
         window.location.reload();
         setUsername('');
         setPassword('');
