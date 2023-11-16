@@ -22,9 +22,9 @@ function Login() {
       await axios.post('/api/login', { username, password }).then(() => {
         // window.location.reload();
         navigate('/chat');
+        setUsername('');
+        setPassword('');
       });
-      setUsername('');
-      setPassword('');
     } catch (error) {
       console.log(error);
     }
