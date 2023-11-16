@@ -32,14 +32,10 @@ function ChatContainer() {
   console.log(conMembers);
   const Logout = async (e) => {
     e.preventDefault();
-    await axios
-      .post('/api/logout')
-      .then(() => {
-        alert('are you sure to logout?');
-      })
-      .finally(() => {
-        window.location.reload();
-      });
+    await axios.post('/api/logout').then(() => {
+      alert('are you sure to logout?');
+      window.location.reload();
+    });
   };
   useEffect(() => {
     const GetConversation = async () => {
