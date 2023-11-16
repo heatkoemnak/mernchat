@@ -27,7 +27,6 @@ function Login() {
     try {
       await axios.post('/api/login', { username, password }).then((res) => {
         if (res.data) {
-          console.log('Login successfully');
           window.location.href = '/chat';
           setUsername('');
           setPassword('');
