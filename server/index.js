@@ -13,6 +13,8 @@ const { Server } = require('socket.io');
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// CORS middleware
+
 app.use(
   cors({
     origin: 'https://mernchat-emqm.vercel.app',

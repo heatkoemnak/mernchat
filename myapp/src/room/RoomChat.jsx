@@ -5,21 +5,15 @@ import axios from 'axios';
 import Home from '../pages/Home';
 
 function RoomChat() {
-  const { user, setUsers, setLoggedIn } = useContext(UserContext);
+  const { setUsers, LoggedIn } = useContext(UserContext);
+  const GetUsers = async () => {
+    const res = await axios.get('/api/users');
+    setUsers(res.data);
+  };
   useEffect(() => {
-    const GetUsers = async () => {
-      await axios.get('/api/users').then((res) => {
-        setUsers(res.data);
-      });
-    };
     GetUsers();
-  }, [setUsers]);
-  useEffect(() => {
-    if (user) {
-      setLoggedIn(true);
-    }
-  }, [setLoggedIn, user]);
-  return <>{user ? <ChatContainer /> : <Home />}</>;
+  });
+  return <>{LoggedIn ? <ChatContainer /> : <Home />}</>;
 }
 
 export default RoomChat;
