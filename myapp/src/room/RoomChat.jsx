@@ -6,13 +6,18 @@ import Home from '../pages/Home';
 
 function RoomChat() {
   const { setUsers, LoggedIn } = useContext(UserContext);
-  const GetUsers = async () => {
-    const res = await axios.get('/api/users');
-    setUsers(res.data);
-  };
+
   useEffect(() => {
+    const GetUsers = async () => {
+      await axios.get('/api/users').then((err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        setUsers(result.data);
+      });
+    };
     GetUsers();
-  });
+  }, [setUsers]);
   return <>{LoggedIn ? <ChatContainer /> : <Home />}</>;
 }
 
