@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { auth, provider } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
 import './form.css';
@@ -11,7 +11,13 @@ function Login() {
   const [password, setPassword] = useState('');
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  console.log(user);
+  useEffect(() => {
+    if (user) {
+      navigate('/chat');
+    } else {
+      navigate('/login');
+    }
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,10 +25,13 @@ function Login() {
       alert('please fill  all the required fields');
     }
     try {
-      await axios.post('/api/login', { username, password }).then(() => {
-        navigate('/chat');
-        setUsername('');
-        setPassword('');
+      await axios.post('/api/login', { username, password }).then((res) => {
+        if (res.data) {
+          console.log('Login successfully');
+          window.location.href = '/chat';
+          setUsername('');
+          setPassword('');
+        }
       });
     } catch (error) {
       console.log(error);

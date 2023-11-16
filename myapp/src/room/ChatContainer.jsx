@@ -32,8 +32,10 @@ function ChatContainer() {
   console.log(conMembers);
 
   const Logout = async () => {
-    await axios.get('/api/logout').then(() => {
-      window.location.reload();
+    await axios.get('/api/logout').then((res) => {
+      if (res.data) {
+        window.location.href = '/';
+      }
     });
   };
   useEffect(() => {
@@ -249,7 +251,7 @@ function ChatContainer() {
             </div>
           </div>
           <div className="logout">
-            <button onClick={Logout}>LOGOUT</button>
+            <button onClick={Logout}>Logout</button>
           </div>
         </div>
       </div>

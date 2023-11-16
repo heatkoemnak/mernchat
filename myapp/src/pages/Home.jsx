@@ -9,7 +9,7 @@ function Home() {
   const navigate = useNavigate();
   useEffect(() => {
     if (LoggedIn) {
-      navigate('/home');
+      navigate('/chat');
     } else {
       navigate('/login');
     }
