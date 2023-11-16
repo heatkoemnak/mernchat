@@ -13,9 +13,9 @@ import Home from './pages/Home';
 
 // import HeaderChat from './room/HeaderChat';
 
+axios.defaults.baseURL = 'https://backenddeploy.vercel.app';
+axios.defaults.withCredentials = true;
 function App() {
-  axios.defaults.baseURL = 'https://backenddeploy.vercel.app';
-  axios.defaults.withCredentials = true;
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
   useEffect(() => {
@@ -25,7 +25,6 @@ function App() {
     socket?.emit('send_user', user?.userId);
   }, [socket, user?.userId]);
 
-  console.log(axios.defaults.baseURL);
   return (
     <>
       <BrowserRouter>
