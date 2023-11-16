@@ -30,7 +30,7 @@ function ChatContainer() {
   console.log(userId);
   console.log(conversation);
   console.log(conMembers);
-  
+
   const Logout = async (e) => {
     e.preventDefault();
     await axios.post('/api/logout').then(() => {
@@ -250,7 +250,12 @@ function ChatContainer() {
             </div>
           </div>
           <div className="logout">
-            <button type="submit" onClick={Logout}>
+            <button
+              type="submit"
+              onSubmit={(e) => {
+                Logout(e);
+              }}
+            >
               LOGOUT
             </button>
           </div>
