@@ -37,7 +37,7 @@ function ChatContainer() {
   };
   useEffect(() => {
     const GetConversation = async () => {
-      await axios.get('/conversation/' + id).then((res) => {
+      await axios.get('/conversations/' + id).then((res) => {
         setConversation(res.data);
         setConversationId(
           res.data?.find(
@@ -71,7 +71,7 @@ function ChatContainer() {
   console.log(searchChat);
   useEffect(() => {
     const GetConversationByUserId = async () => {
-      await axios.get('/conversation/' + user?.userId).then((res) => {
+      await axios.get('/conversations/' + user?.userId).then((res) => {
         setConMembers(res.data);
       });
     };
