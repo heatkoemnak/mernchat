@@ -59,7 +59,7 @@ function ChatBox() {
       time: moment().format('LT'),
     };
     try {
-      await axios.post('/api/messages/send_message', dataToSend).then((res) => {
+      await axios.post('/api/send_message', dataToSend).then((res) => {
         console.log(res.data);
       });
     } catch (error) {

@@ -15,7 +15,6 @@ import Home from './pages/Home';
 
 function App() {
   axios.defaults.baseURL = 'https://backenddeploy.vercel.app';
-
   axios.defaults.withCredentials = true;
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
