@@ -32,7 +32,7 @@ function ChatContainer() {
   console.log(conMembers);
 
   const Logout = async () => {
-    await axios.get('/api/logout').then((res) => {
+    await axios.post('/api/logout').then((res) => {
       if (res.data) {
         window.location.href = '/';
       }
