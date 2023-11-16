@@ -30,9 +30,10 @@ function ChatContainer() {
   console.log(conversation);
   console.log(conMembers);
 
-  const Logout = () => {
-    axios.post('/api/logout').then(() => {
-      window.location.reload();
+  const Logout = async (e) => {
+    e.preventDefault();
+    await axios.post('/api/logout').then(() => {
+      alert('are you sure to logout?');
     });
   };
   useEffect(() => {
@@ -248,7 +249,9 @@ function ChatContainer() {
             </div>
           </div>
           <div className="logout">
-            <button onClick={Logout}>LOGOUT</button>
+            <button type="submit" onClick={Logout}>
+              LOGOUT
+            </button>
           </div>
         </div>
       </div>
