@@ -25,16 +25,21 @@ function ChatContainer() {
   } = useContext(UserContext);
   const { id, username, userId } = useParams();
   console.log(id);
+  console.log(user);
   console.log(username);
   console.log(userId);
   console.log(conversation);
   console.log(conMembers);
-
   const Logout = async (e) => {
     e.preventDefault();
-    await axios.post('/api/logout').then(() => {
-      alert('are you sure to logout?');
-    });
+    await axios
+      .post('/api/logout')
+      .then(() => {
+        alert('are you sure to logout?');
+      })
+      .finally(() => {
+        window.location.reload();
+      });
   };
   useEffect(() => {
     const GetConversation = async () => {
