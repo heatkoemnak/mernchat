@@ -30,10 +30,10 @@ function ChatContainer() {
   console.log(userId);
   console.log(conversation);
   console.log(conMembers);
+  
   const Logout = async (e) => {
     e.preventDefault();
     await axios.post('/api/logout').then(() => {
-      alert('are you sure to logout?');
       window.location.reload();
     });
   };
