@@ -10,7 +10,6 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { user } = useContext(UserContext);
-  const navigate = useNavigate();
   console.log(user);
 
   const handleSubmit = async (e) => {
@@ -20,8 +19,7 @@ function Login() {
     }
     try {
       await axios.post('/api/login', { username, password }).then(() => {
-        // window.location.reload();
-        navigate('/chat');
+        window.location.reload();
         setUsername('');
         setPassword('');
       });
