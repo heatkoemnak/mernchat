@@ -31,7 +31,7 @@ function App() {
         {/* <HeaderChat /> */}
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/home" exact element={<RoomChat />} />
+          <Route path="/chat" exact element={<RoomChat />} />
           <Route path="/:id" element={<RoomChat />} />
           <Route path="/:username/:userId" element={<RoomChat />} />
           <Route path="login" element={<Login />} />

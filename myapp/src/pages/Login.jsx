@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { auth, provider } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
 import './form.css';
@@ -11,25 +11,20 @@ function Login() {
   const [password, setPassword] = useState('');
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (!user) {
-      navigate('/login');
-    } else {
-      navigate('/home');
-    }
-  }, [navigate, user]);
+  console.log(user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!username || !password) {
-      alert('fill the form');
+      alert('please fill  all the required fields');
     }
     try {
       await axios.post('/api/login', { username, password }).then(() => {
-        window.location.reload();
-        setUsername('');
-        setPassword('');
+        // window.location.reload();
+        navigate('/chat');
       });
+      setUsername('');
+      setPassword('');
     } catch (error) {
       console.log(error);
     }
