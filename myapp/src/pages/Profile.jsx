@@ -39,7 +39,9 @@ function Profile(username) {
         {userProfile?.profilePicture ? (
           <img src={userProfile?.profilePicture} alt="" />
         ) : (
-          <span className="Profile-Text">{userProfile?.username[0]}</span>
+          <span className="Profile-Text">
+            {userProfile?.username[0].toUpperCase()}
+          </span>
         )}
         <div className="user-text">
           <div className="username">
