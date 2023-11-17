@@ -34,7 +34,7 @@ function Register() {
         .post('/api/register', {
           username,
           password,
-          ConfirmPassword
+          ConfirmPassword,
         })
         .then(() => {
           setUserCreated(true);
