@@ -34,7 +34,7 @@ function App() {
           <Route path="/chat" exact element={<RoomChat />} />
           <Route path="/:id" element={<RoomChat />} />
           <Route path="/:username/:userId" element={<RoomChat />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
