@@ -13,23 +13,22 @@ function ChatBox() {
   const { user, users, receivedData, setReceivedData, conversationId } =
     useContext(UserContext);
 
+  const navigate = useNavigate();
   const { id } = useParams();
   console.log(id);
   console.log(socket);
   console.log(conversationId);
   console.log(users);
+  console.log(navigate);
   const inCon = users?.find((u) => {
     return u._id === id;
   });
   console.log(inCon);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (id) {
-      navigate(`/${id}`);
-    } else {
-      navigate(`/chat`);
-    }
-  }, [navigate, id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     navigate(`/${id}`);
+  //   }
+  // }, [navigate, id]);
 
   function handleOnEnter(message) {
     console.log(message);
