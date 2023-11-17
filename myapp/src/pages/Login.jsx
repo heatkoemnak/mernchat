@@ -14,8 +14,6 @@ function Login() {
   useEffect(() => {
     if (user) {
       navigate('/chat');
-    } else {
-      navigate('/login');
     }
   });
 
@@ -25,12 +23,9 @@ function Login() {
       alert('please fill  all the required fields');
     }
     try {
-      await axios.post('/api/login', { username, password }).then((res) => {
-        if (res.data) {
-          window.location.href = '/chat';
-          setUsername('');
-          setPassword('');
-        }
+      await axios.post('/api/login', { username, password }).then(() => {
+        setUsername('');
+        setPassword('');
       });
     } catch (error) {
       console.log(error);
