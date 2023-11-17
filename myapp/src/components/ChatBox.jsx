@@ -26,6 +26,8 @@ function ChatBox() {
   useEffect(() => {
     if (id) {
       navigate(`/${id}`);
+    } else {
+      navigate(`/chat`);
     }
   }, [navigate, id]);
 
@@ -102,7 +104,7 @@ function ChatBox() {
         <div className="chat__box__header">
           <div className="chat__box__left">
             {inCon ? (
-              <Link to="/home" className="link">
+              <Link to="/chat" className="link">
                 <KeyboardBackspaceIcon />
               </Link>
             ) : null}
