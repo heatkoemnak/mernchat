@@ -139,13 +139,9 @@
   color: #ffffff;
   border-radius: 50%;
   cursor: pointer;
-  margin-right: 30px;
   border: 1px solid goldenrod;
 }
-.link {
-  text-decoration: none;
-  color: #391f1f;
-}
+
 .profile {
   display: flex;
   align-items: center;
@@ -189,6 +185,9 @@
   .chatContainer {
     flex-direction: column;
   }
+  .contactsHeader .link h2 {
+    display: none;
+  }
   .contactsHeader {
     width: 100%;
     margin: 10px 5px;
@@ -199,7 +198,7 @@
   .contacts {
     display: flex;
     flex-direction: column;
-    height:40vh;
+    height: 40vh;
     background-color: #3c3333;
   }
   .contact {
