@@ -23,13 +23,13 @@ function ChatBox() {
   const inCon = users?.find((u) => {
     return u._id === id;
   });
-  console.log(inCon);
   // useEffect(() => {
   //   if (id) {
   //     navigate(`/${id}`);
   //   }
   // }, [navigate, id]);
 
+  console.log(inCon);
   function handleOnEnter(message) {
     console.log(message);
   }
