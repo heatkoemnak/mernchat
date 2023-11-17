@@ -3,26 +3,6 @@
     {
       "src": "/(.*)",
       "dest": "/"
-    },
-    {
-      "src": "/:id",
-      "dest": "/"
-    },
-    {
-      "src": "/chat",
-      "dest": "/"
-    },
-    {
-      "src": "/login",
-      "dest": "/"
-    },
-    {
-      "src": "/register",
-      "dest": "/"
-    },
-    {
-      "src": "/:username/:userId",
-      "dest": "/"
     }
   ]
 }
