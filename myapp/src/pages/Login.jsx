@@ -9,9 +9,9 @@ import { UserContext } from '../Context/UserContext';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const { user } = useContext(UserContext);
-  // console.log(errorMessage);
+  console.log(errorMessage);
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
@@ -31,8 +31,8 @@ function Login() {
         setPassword('');
       });
     } catch (error) {
-      console.log(error);
-      // setErrorMessage(error.response.error);
+      console.log(error.response.data.error);
+      setErrorMessage(error.response.data.error);
     }
   };
   const SignInWithGoogle = async () => {
@@ -64,18 +64,22 @@ function Login() {
             onChange={(ev) => setPassword(ev.target.value)}
             placeholder="password"
           />
-          <button type="submit">Login</button>
+          <button type="submit" className="btn">
+            Login
+          </button>
         </form>
+        <span className="error">{errorMessage && errorMessage}</span>
         <span className="reg__orr__log">
-          {/* {errorMessage?.errorMessage} */}
           Do not have an account?
-          <Link to="/register" className="span">
-            Register
-          </Link>
+          <Link to="/register">Register</Link>
         </span>
         <div className="bottom__controller">
           <div className="wrap__bottom">
-            <h3>Sign in with</h3>
+            <div className="signin_up_methods">
+              <hr />
+              or
+              <hr />
+            </div>
             <div className="login__with" onClick={SignInWithGoogle}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/300/300221.png"

@@ -13,7 +13,34 @@
   margin: 10px;
 }
 .form__controller {
-  width: 50%;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+}
+.btn {
+  background-color: #ffaf01;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.signin_up_methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.signin_up_methods hr {
+  width: 100%;
+  color: aliceblue;
+  background-color: #fff;
+  margin: 5px;
 }
 .top__controller {
   display: flex;
@@ -22,20 +49,13 @@
 }
 .top__controller > input {
   padding: 15px;
+  width: 300px;
 }
 .top__controller > input:focus {
   outline: none;
   border-bottom: 2px solid greenyellow;
 }
-.top__controller > button {
-  background-color: #ffaf01;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
+
 .top__controller > button:hover {
   color: #ffae01;
   transition: ease-in-out 0.32s;
@@ -49,6 +69,7 @@ img {
 }
 
 .login__with {
+  width: 300px;
   display: flex;
   align-items: center;
   background-color: #545353;
@@ -74,9 +95,12 @@ img {
   gap: 10px;
   margin-top: 10px;
 }
-@media screen and (min-width: 850px) {
+@media screen and (max-width: 400px) {
   .form__controller {
-    width: 22%;
-    padding: 30px;
+    width: 80%;
   }
+}
+.error {
+  margin-top: 5px;
+  color: red;
 }
