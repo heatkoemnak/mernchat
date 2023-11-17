@@ -185,12 +185,11 @@
   .chatContainer {
     flex-direction: column;
   }
-  .contactsHeader .link h2 {
+  .contactsHeader .link{
     display: none;
   }
   .contactsHeader {
     width: 100%;
-    margin: 10px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
