@@ -28,7 +28,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <HeaderChat /> */}
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/chat" exact element={<RoomChat />} />
