@@ -124,7 +124,7 @@ function ChatContainer() {
           <div className="contactsHeader">
             <ElectricBoltIcon />
             <Link
-              to="/home"
+              to="/chat"
               className="link"
               onClick={() => {
                 setIsProfile(false);
