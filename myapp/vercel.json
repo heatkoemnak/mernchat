@@ -2,7 +2,7 @@
   "routes": [
     {
       "src": "/chat",
-      "des": "/"
+      "dest": "/"
     }
   ]
 }
