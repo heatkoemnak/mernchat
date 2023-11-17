@@ -31,7 +31,7 @@ function Login() {
         setPassword('');
       });
     } catch (error) {
-      console.log(error.response.error);
+      console.log(error);
       // setErrorMessage(error.response.error);
     }
   };
