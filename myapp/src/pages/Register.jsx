@@ -22,16 +22,19 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!username || !password || !ConfirmPassword) {
-      alert('fill the form');
-    } else if (password !== ConfirmPassword) {
-      alert('passwords do not match');
-    }
+    // if (!username || !password || !ConfirmPassword) {
+    //   setErrorMessage(
+    //     'please fill  all the required fields and make sure passwords match'
+    //   );
+    // } else if (password !== ConfirmPassword) {
+    //   setErrorMessage('passwords do not match');
+    // }
     try {
       await axios
         .post('/api/register', {
           username,
           password,
+          ConfirmPassword
         })
         .then(() => {
           setUserCreated(true);
@@ -40,7 +43,7 @@ function Register() {
           setConfirmPassword('');
         });
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
       setErrorMessage(error.response.data.error);
     }
   };
@@ -91,7 +94,7 @@ function Register() {
         </span>
         <div className="bottom__controller">
           <div className="wrap__bottom">
-          <div className="signin_up_methods">
+            <div className="signin_up_methods">
               <hr />
               or
               <hr />

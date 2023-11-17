@@ -11,7 +11,6 @@ function Login() {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
   const { user } = useContext(UserContext);
-  console.log(errorMessage);
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
@@ -22,7 +21,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!username || !password) {
-      alert('please fill  all the required fields');
+      setErrorMessage('please fill  all the required fields');
     }
     try {
       await axios.post('/api/login', { username, password }).then(() => {
