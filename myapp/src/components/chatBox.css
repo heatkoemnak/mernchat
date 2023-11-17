@@ -92,12 +92,6 @@
 .active {
   color: var(--h2-color);
 }
-@media screen and (max-width: 820px) {
-  .chat__box {
-    height: 20vh;
-    padding: 0;
-  }
-}
 
 .message-list {
   display: flex;
@@ -146,7 +140,23 @@
   color: var(--h2-color);
   margin: 0 10px;
 }
-
+@media screen and (max-width: 400px) {
+  .chat__box {
+    height: 20vh;
+    padding: 0;
+  }
+  .messageText {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 10px;
+    max-width: 200px;
+    word-wrap: break-word;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #131212;
+  }
+}
 .if-null {
   position: relative;
   display: flex;
