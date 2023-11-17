@@ -3,6 +3,10 @@
     {
       "src": "/chat",
       "dest": "/"
+    },
+    {
+      "src": "/login",
+      "dest": "/"
     }
   ]
 }
