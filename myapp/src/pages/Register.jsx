@@ -16,8 +16,6 @@ function Register() {
   useEffect(() => {
     if (userCreated) {
       navigate('/');
-    } else {
-      navigate('/register');
     }
   }, [navigate, userCreated]);
 
