@@ -56,8 +56,8 @@
   border-bottom: 2px solid greenyellow;
 }
 
-.top__controller > button:hover {
-  color: #ffae01;
+.btn:hover {
+  color: rgb(48, 39, 20);
   transition: ease-in-out 0.32s;
 }
 .bottom__controller {
@@ -79,15 +79,11 @@ img {
   cursor: pointer;
 }
 .login__with:hover {
-  background-color: #ffae00;
+  background-color: #493a6f;
   transition: ease-in-out;
   color: #fff;
 }
-.login__with:hover {
-  background-color: #ffb300;
-  transition: ease-in-out 0.32s;
-  color: #fff;
-}
+
 .reg__orr__log {
   display: flex;
   align-items: center;
@@ -95,11 +91,7 @@ img {
   gap: 10px;
   margin-top: 10px;
 }
-@media screen and (max-width: 400px) {
-  .form__controller {
-    width: 80%;
-  }
-}
+
 .error {
   margin-top: 5px;
   color: red;
