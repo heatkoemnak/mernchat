@@ -9,9 +9,9 @@ import { UserContext } from '../Context/UserContext';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState();
+  // const [errorMessage, setErrorMessage] = useState(null);
   const { user } = useContext(UserContext);
-  console.log(errorMessage);
+  // console.log(errorMessage);
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
@@ -31,7 +31,8 @@ function Login() {
         setPassword('');
       });
     } catch (error) {
-      setErrorMessage(error.response.data);
+      console.log(error.response.error);
+      // setErrorMessage(error.response.error);
     }
   };
   const SignInWithGoogle = async () => {
@@ -66,7 +67,7 @@ function Login() {
           <button type="submit">Login</button>
         </form>
         <span className="reg__orr__log">
-          {errorMessage?.errorMessage}
+          {/* {errorMessage?.errorMessage} */}
           Do not have an account?
           <Link to="/register" className="span">
             Register
