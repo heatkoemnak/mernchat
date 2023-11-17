@@ -1,7 +1,19 @@
 {
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/chat",
+      "dest": "/"
+    },
+    {
+      "src": "/login",
+      "dest": "/"
+    },
+    {
+      "src": "/",
+      "dest": "/"
+    },
+    {
+      "src": "/register",
       "dest": "/"
     }
   ]
