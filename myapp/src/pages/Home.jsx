@@ -3,17 +3,17 @@ import './home.css';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../Context/UserContext';
 function Home() {
-  const { user, LoggedIn } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   console.log(user);
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (LoggedIn) {
+    if (user) {
       navigate('/chat');
     } else {
-      navigate('/login');
+      navigate('/');
     }
-  }, [navigate, LoggedIn, user]);
+  }, [navigate, user]);
 
   return (
     <>
