@@ -1,5 +1,5 @@
 {
-  "rewrite": [
+  "redirects": [
     {
       "source": "/:id",
       "destination": "/"
