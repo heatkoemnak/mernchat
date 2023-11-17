@@ -22,13 +22,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!username || !password || !ConfirmPassword) {
-    //   setErrorMessage(
-    //     'please fill  all the required fields and make sure passwords match'
-    //   );
-    // } else if (password !== ConfirmPassword) {
-    //   setErrorMessage('passwords do not match');
-    // }
+
     try {
       await axios
         .post('/api/register', {
