@@ -1,6 +1,10 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "destination": "/"
+    },
+    {
       "source": "/:id",
       "destination": "/"
     },
