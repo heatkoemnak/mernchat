@@ -1,27 +1,7 @@
 {
   "routes": [
     {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/chat",
-      "dest": "/"
-    },
-    {
-      "src": "/login",
-      "dest": "/"
-    },
-    {
-      "src": "/register",
-      "dest": "/"
-    },
-    {
-      "src": "/{id}",
-      "dest": "/"
-    },
-    {
-      "src": "/{username}/{userId}",
+      "src": "/(*)",
       "dest": "/"
     }
   ]
