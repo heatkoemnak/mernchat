@@ -13,13 +13,16 @@ import Home from './pages/Home';
 
 // import HeaderChat from './room/HeaderChat';
 
-axios.defaults.baseURL = 'https://backenddeploy.vercel.app';
+axios.defaults.baseURL =
+  'https://backenddeploy.vercel.app' || 'http://localhost:8000';
 axios.defaults.withCredentials = true;
 function App() {
   const { socket, user, setSocket } = useContext(UserContext);
   console.log(user);
   useEffect(() => {
-    setSocket(io('https://backenddeploy.vercel.app'));
+    setSocket(
+      io('https://backenddeploy.vercel.app' || 'http://localhost:8000')
+    );
   }, [setSocket]);
   useEffect(() => {
     socket?.emit('send_user', user?.userId);
