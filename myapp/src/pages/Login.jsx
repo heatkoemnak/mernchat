@@ -24,6 +24,7 @@ function Login() {
     }
     try {
       await axios.post('/api/login', { username, password }).then(() => {
+        window.location.reload();
         setUsername('');
         setPassword('');
       });
