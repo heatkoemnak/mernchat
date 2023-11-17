@@ -5,7 +5,7 @@ import axios from 'axios';
 import Home from '../pages/Home';
 
 function RoomChat() {
-  const { setUsers, LoggedIn } = useContext(UserContext);
+  const { setUsers, user } = useContext(UserContext);
 
   useEffect(() => {
     const GetUsers = async () => {
@@ -18,7 +18,7 @@ function RoomChat() {
     };
     GetUsers();
   }, [setUsers]);
-  return <>{LoggedIn ? <ChatContainer /> : <Home />}</>;
+  return <>{user ? <ChatContainer /> : <Home />}</>;
 }
 
 export default RoomChat;
