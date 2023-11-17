@@ -9,6 +9,7 @@ import { UserContext } from '../Context/UserContext';
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
   const [ConfirmPassword, setConfirmPassword] = useState('');
   const { userCreated, setUserCreated } = useContext(UserContext);
   console.log(userCreated);
@@ -40,6 +41,7 @@ function Register() {
         });
     } catch (error) {
       console.log(error);
+      setErrorMessage(error.response.data.error);
     }
   };
   const SignInWithGoogle = async () => {
@@ -78,17 +80,22 @@ function Register() {
             onChange={(ev) => setConfirmPassword(ev.target.value)}
             placeholder="confirm password"
           />
-          <button type="submit">Create Account</button>
+          <button type="submit" className="btn">
+            Create Account
+          </button>
         </form>
+        <span className="error">{errorMessage && errorMessage}</span>
         <span className="reg__orr__log">
           Already have an account?
-          <Link to="/login" className="span">
-            Login here.
-          </Link>
+          <Link to="/login">Login here.</Link>
         </span>
         <div className="bottom__controller">
           <div className="wrap__bottom">
-            <h3>Sign in with</h3>
+          <div className="signin_up_methods">
+              <hr />
+              or
+              <hr />
+            </div>
             <div className="login__with" onClick={SignInWithGoogle}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
