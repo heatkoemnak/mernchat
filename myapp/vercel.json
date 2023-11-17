@@ -1,28 +1,28 @@
 {
-  "redirects": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "src": "/(.*)",
+      "dest": "/"
     },
     {
-      "source": "/:id",
-      "destination": "/"
+      "src": "/:id",
+      "dest": "/"
     },
     {
-      "source": "/chat",
-      "destination": "/"
+      "src": "/chat",
+      "dest": "/"
     },
     {
-      "source": "/login",
-      "destination": "/"
+      "src": "/login",
+      "dest": "/"
     },
     {
-      "source": "/register",
-      "destination": "/"
+      "src": "/register",
+      "dest": "/"
     },
     {
-      "source": "/:username/:userId",
-      "destination": "/"
+      "src": "/:username/:userId",
+      "dest": "/"
     }
   ]
 }
