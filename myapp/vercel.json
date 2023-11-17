@@ -13,6 +13,10 @@
       "dest": "/"
     },
     {
+      "src": "/:id",
+      "dest": "/"
+    },
+    {
       "src": "/register",
       "dest": "/"
     }
