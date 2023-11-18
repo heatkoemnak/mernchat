@@ -18,22 +18,12 @@ function ChatContainer() {
     user,
     conMembers,
     setConMembers,
-    conversation,
     setConversation,
     setConversationId,
-    receivedData,
     setAllMessages,
     allMessages,
   } = useContext(UserContext);
-  const { id, username, userId } = useParams();
-  console.log(id);
-  console.log(user);
-  console.log(username);
-  console.log(userId);
-  console.log(conversation);
-  console.log(conMembers);
-  console.log(receivedData);
-  console.log(allMessages);
+  const { id, username } = useParams();
 
   const Logout = async () => {
     await axios.post('/api/logout').then((res) => {
@@ -86,7 +76,6 @@ function ChatContainer() {
     return u.username.toLowerCase().includes(queryChat?.toLowerCase());
   });
 
-  console.log(searchChat);
   useEffect(() => {
     const GetConversationByUserId = async () => {
       await axios.get('/api/conversations/' + user?.userId).then((res) => {
@@ -99,7 +88,6 @@ function ChatContainer() {
   const contact = users?.filter((u) => {
     return u._id !== user?.userId;
   });
-  console.log(contact);
 
   const searchUser = contact?.filter((u) => {
     return u.username.toLowerCase().includes(queryFriend?.toLowerCase());
@@ -174,8 +162,8 @@ function ChatContainer() {
                   )}
                   <div className="chat-details">
                     <div className="chat-details-left">
-                      <p className='contact-name'>{contact?.username}</p>
-                      <p className='last-message'>
+                      <p className="contact-name">{contact?.username}</p>
+                      <p className="last-message">
                         {
                           allMessages?.filter(
                             (m) =>
@@ -191,7 +179,7 @@ function ChatContainer() {
                         }
                       </p>
                     </div>
-                    <span className='time-last-chat'>
+                    <span className="time-last-chat">
                       {
                         allMessages?.filter(
                           (m) =>

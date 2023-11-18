@@ -8,16 +8,12 @@ import InputEmoji from 'react-input-emoji';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 function ChatBox() {
-  const { socket } = useContext(UserContext);
   const [message, setMessage] = useState('');
-  const { user, users, receivedData, setReceivedData, conversationId } =
+  const { user, socket, users, receivedData, setReceivedData, conversationId } =
     useContext(UserContext);
 
   const { id } = useParams();
-  console.log(id);
-  console.log(socket);
-  console.log(conversationId);
-  console.log(users);
+
   const inCon = users?.find((u) => {
     return u._id === id;
   });
