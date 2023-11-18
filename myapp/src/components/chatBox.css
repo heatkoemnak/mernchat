@@ -55,7 +55,6 @@
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
-  margin-left: 10px;
   border: 2px solid rgb(78, 234, 34);
 }
 .chat__box__footer > input {
