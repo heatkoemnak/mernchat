@@ -12,6 +12,7 @@
   height: 80%;
   padding: 10px;
   background-color: var(--primary-color);
+  overflow-y: scroll;
   /* background-color: rgba(51, 50, 50, 0.4); */
 }
 .profile-Text {
@@ -34,15 +35,16 @@
   /* background-color: #3c3333; */
 }
 .contact {
+  margin: 2px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 5px;
-  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
   gap: 5px;
   color: #453636;
+  border-bottom: 1px solid #494747;
 }
 
 .contact:hover {
@@ -50,12 +52,14 @@
   transition: ease-in-out 0.2s;
   color: #ffffff;
 }
-.contact > img {
+.contact > img,
+.profile-Text {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1px solid goldenrod;
+  border: 1px solid rgb(249, 188, 3);
 }
+
 .chatBox {
   padding: 0 30px;
   flex: 1.5;
@@ -88,6 +92,23 @@
   justify-content: end;
   height: 10vh;
   /* background-color: #5d5050; */
+}
+.chat-details {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time-last-chat {
+  font-size: 10px;
+}
+.last-message {
+  font-size: 15px;
+  color: #cecece;
+}
+.contact-name {
+  font-size: 16px;
+  font-weight: 600;
 }
 .logout > button {
   background-color: #3f3f8c;
@@ -185,7 +206,7 @@
   .chatContainer {
     flex-direction: column;
   }
-  .contactsHeader .link{
+  .contactsHeader .link {
     display: none;
   }
   .contactsHeader {
@@ -223,7 +244,7 @@
     display: flex;
     padding: 0;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     background-color: #1d1a1a;
   }
   .GroupChat {

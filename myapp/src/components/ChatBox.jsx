@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import moment from 'moment';
 import './chatBox.css';
 import { UserContext } from '../Context/UserContext';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import InputEmoji from 'react-input-emoji';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
@@ -13,21 +13,14 @@ function ChatBox() {
   const { user, users, receivedData, setReceivedData, conversationId } =
     useContext(UserContext);
 
-  const navigate = useNavigate();
   const { id } = useParams();
   console.log(id);
   console.log(socket);
   console.log(conversationId);
   console.log(users);
-  console.log(navigate);
   const inCon = users?.find((u) => {
     return u._id === id;
   });
-  // useEffect(() => {
-  //   if (id) {
-  //     navigate(`/${id}`);
-  //   }
-  // }, [navigate, id]);
 
   console.log(inCon);
   function handleOnEnter(message) {
@@ -188,9 +181,8 @@ export const ConUndefined = () => {
       <img
         src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/336998005/original/9d91e57d1cbdb0c4445acc42af554de6eb650615/design-illustrated-gifts-for-you-just-as-you-need.jpg"
         alt=""
-        width={200}
       />
-      <span>Welcome to Mern Chat APP</span>
+      <span>Welcome to FlaChat</span>
       <p className="select-message">Select a chat to start conversation</p>
     </div>
   );

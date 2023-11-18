@@ -22,6 +22,8 @@ function ChatContainer() {
     setConversation,
     setConversationId,
     receivedData,
+    setAllMessages,
+    allMessages,
   } = useContext(UserContext);
   const { id, username, userId } = useParams();
   console.log(id);
@@ -30,6 +32,8 @@ function ChatContainer() {
   console.log(userId);
   console.log(conversation);
   console.log(conMembers);
+  console.log(receivedData);
+  console.log(allMessages);
 
   const Logout = async () => {
     await axios.post('/api/logout').then((res) => {
@@ -38,6 +42,16 @@ function ChatContainer() {
       }
     });
   };
+
+  useEffect(() => {
+    const GetAllMessages = async () => {
+      await axios.get('/api/messages').then((res) => {
+        setAllMessages(res.data);
+      });
+    };
+    GetAllMessages();
+  }, [setAllMessages]);
+
   useEffect(() => {
     const GetConversation = async () => {
       await axios.get('/api/conversations/' + id).then((res) => {
@@ -71,7 +85,7 @@ function ChatContainer() {
   const searchChat = userMembers?.filter((u) => {
     return u.username.toLowerCase().includes(queryChat?.toLowerCase());
   });
-  
+
   console.log(searchChat);
   useEffect(() => {
     const GetConversationByUserId = async () => {
@@ -158,17 +172,40 @@ function ChatContainer() {
                   ) : (
                     <h3 className="profile-Text">{contact?.username[0]}</h3>
                   )}
-                  <div className="meta">
-                    <p>{contact?.username}</p>
-                    <p>
+                  <div className="chat-details">
+                    <div className="chat-details-left">
+                      <p className='contact-name'>{contact?.username}</p>
+                      <p className='last-message'>
+                        {
+                          allMessages?.filter(
+                            (m) =>
+                              m?.senderId === contact?._id ||
+                              m?.receiverId === contact?._id
+                          )[
+                            allMessages?.filter(
+                              (m) =>
+                                m?.senderId === contact?._id ||
+                                m?.receiverId === contact?._id
+                            )?.length - 1
+                          ]?.messageText
+                        }
+                      </p>
+                    </div>
+                    <span className='time-last-chat'>
                       {
-                        receivedData?.filter(
-                          (data) =>
-                            data?.senderId === contact?._id ||
-                            data?.receiverId === contact?._id
-                        )[receivedData.length - 1]?.messageText
+                        allMessages?.filter(
+                          (m) =>
+                            m?.senderId === contact?._id ||
+                            m?.receiverId === contact?._id
+                        )[
+                          allMessages?.filter(
+                            (m) =>
+                              m?.senderId === contact?._id ||
+                              m?.receiverId === contact?._id
+                          )?.length - 1
+                        ]?.time
                       }
-                    </p>
+                    </span>
                   </div>
                 </Link>
               ))

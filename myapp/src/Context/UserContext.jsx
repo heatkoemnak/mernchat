@@ -14,6 +14,7 @@ export const UserProvider = (children) => {
   const [conversation, setConversation] = useState(null);
   const [conversationId, setConversationId] = useState(null);
   const [conMembers, setConMembers] = useState(null);
+  const [allMessages, setAllMessages] = useState(null);
 
   useEffect(() => {
     axios.get('/api/profile').then((res) => {
@@ -47,6 +48,8 @@ export const UserProvider = (children) => {
         setConversationId,
         conMembers,
         setConMembers,
+        allMessages,
+        setAllMessages,
       }}
     >
       {children.children}
