@@ -155,6 +155,9 @@
     font-weight: 500;
     color: #131212;
   }
+  .chat__box__footer > span {
+    display: none;
+  }
 }
 .if-null {
   position: relative;
