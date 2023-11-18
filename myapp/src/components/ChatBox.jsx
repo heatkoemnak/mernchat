@@ -130,7 +130,9 @@ function ChatBox() {
                 <div className="message__top">
                   {m?.senderId !== user?.userId ? (
                     <img src={m?.profilePicture} alt="" />
-                  ) : null}
+                  ) : (
+                    <span className="profile-Text">{m?.senderName[0]}</span>
+                  )}
                   <p className="messageText">{m?.messageText}</p>
                 </div>
                 <span className="time">{m?.time}</span>
