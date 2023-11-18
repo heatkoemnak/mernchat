@@ -202,13 +202,14 @@
   border: none;
   color: #272323;
 }
-@media screen and (max-width: 820px) {
+
+@media screen and (max-width: 400px) {
   .chatContainer {
     flex-direction: column;
+    background-color: #2b2b2b;
+    color: #ffffff;
   }
-  .contactsHeader .link {
-    display: none;
-  }
+
   .contactsHeader {
     width: 100%;
     display: flex;

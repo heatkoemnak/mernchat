@@ -141,8 +141,7 @@
 }
 @media screen and (max-width: 400px) {
   .chat__box {
-    height: 20vh;
-    padding: 0;
+    height: 100vh;
   }
   .messageText {
     background-color: #fff;
@@ -156,7 +155,16 @@
     color: #131212;
   }
   .chat__box__footer > span {
-    display: none;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 2px solid rgb(78, 234, 34);
   }
 }
 .if-null {
