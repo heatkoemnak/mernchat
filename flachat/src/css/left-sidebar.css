@@ -1,0 +1,108 @@
+.sidebar {
+  position: relative;
+  width: 25%;
+  height: 80vh;
+  background-color: var(--primary-color);
+  transition: ease-in-out 0.2s;
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+}
+.hide-sidebar {
+  width: 25%;
+  height: 80vh;
+  background-color: var(--primary-color);
+  transition: ease-in-out 0.2s;
+}
+.users {
+  height: 90%;
+  overflow-y: scroll;
+}
+.user {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 10px;
+  gap: 10px;
+  border-radius: 0px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(40, 40, 40);
+}
+.user:hover {
+  background-color: var(--hover-color);
+}
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.sidebar-top {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  margin: 5px 18px;
+}
+.sidebar-top > span {
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(65, 69, 63);
+  border-radius: 18px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.sidebar-top > span:nth-child(1) {
+  background-color: var(--icon-color);
+}
+.sidebar-top > span:hover {
+  background-color: var(--icon-color);
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+    height: 80vh;
+  }
+  .hide-sidebar {
+    transition: ease-in-out 0.2s;
+    width: 25%;
+    height: 80vh;
+  }
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+    background-color: #5c5c5c;
+  }
+  .user {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 10px;
+    gap: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(40, 40, 40);
+  }
+  .user:hover {
+    background-color: var(--hover-color);
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 100vh;
+    background-color: rgb(125, 125, 182);
+    z-index: 999;
+  }
+}

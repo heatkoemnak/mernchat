@@ -1,0 +1,30 @@
+.chat-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 90%;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+  .icon-search {
+    margin-left: 8px;
+    color: rgb(158, 37, 37);
+  }
+  .chat-search > input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+  }
+  @media screen and (max-width: 400px) {
+    .chat-search {
+      padding: 5px;
+      width: 90%;
+      border-radius: 10px;
+    }
+   
+  }
