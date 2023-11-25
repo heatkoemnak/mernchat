@@ -1,5 +1,6 @@
 import '../css/empty.css';
 export default function Empty() {
+  
   return (
     <div className="empty">
       <div className="empty-content">

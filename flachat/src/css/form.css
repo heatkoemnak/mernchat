@@ -1,0 +1,139 @@
+.form__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+.form__container > h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 10px;
+}
+.form__controller {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+}
+.btn {
+  background-color: #ffaf01;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.signIn_up_methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.signIn_up_methods hr {
+  width: 100%;
+  color: aliceblue;
+  background-color: #fff;
+  margin: 5px;
+}
+.top__controller {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top__controller > input:focus {
+  outline: none;
+  border-bottom: 2px solid greenyellow;
+}
+
+.btn:hover {
+  color: rgb(48, 39, 20);
+  transition: ease-in-out 0.32s;
+}
+.bottom__controller {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 30px;
+}
+
+.login__with {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: #545353;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.login__with:hover {
+  background-color: #493a6f;
+  transition: ease-in-out;
+  color: #fff;
+}
+
+.reg__orr__log {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.formControl {
+  border-radius: 5px;
+  background-color: #c3c3c3;
+}
+.password,
+.username {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.password input {
+  width: 250px;
+  padding: 15px;
+  border: none;
+  outline: none;
+}
+.username > input {
+  width: 250px;
+  padding: 15px;
+  border: none;
+  outline: none;
+}
+
+.error {
+  margin-top: 5px;
+  color: red;
+}
+.phone__number {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  outline: none;
+}
+.input-phone-number input {
+  width: 250px;
+  border: none;
+  outline: none;
+}
+.input-phone-number input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

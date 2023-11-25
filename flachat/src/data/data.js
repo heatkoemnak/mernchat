@@ -31,5 +31,25 @@ export const users = [
     name: 'user3',
     avatar: avatar,
   },
+  {
+    id: 7,
+    name: 'user2',
+    avatar: avatar,
+  },
+  {
+    id: 8,
+    name: 'user3',
+    avatar: avatar,
+  },
+  {
+    id: 9,
+    name: 'user2',
+    avatar: avatar,
+  },
+  {
+    id: 10,
+    name: 'user3',
+    avatar: avatar,
+  },
  
 ];

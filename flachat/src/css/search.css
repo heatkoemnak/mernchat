@@ -1,30 +1,38 @@
 .chat-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  width: 90%;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.icon-search {
+  margin-left: 8px;
+  color: rgb(158, 37, 37);
+}
+.chat-search > input {
+  width: 90%;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 18px;
+}
+.chat-search > input::placeholder {
+  color: rgb(158, 37, 37);
+  font-size: 18px;
+}
+@media screen and (max-width: 400px) {
+  .chat-search {
+    padding: 5px;
     width: 90%;
-    outline: none;
-    border: none;
-    border-radius: 20px;
-    background-color: #fff;
+    border-radius: 10px;
   }
-  .icon-search {
-    margin-left: 8px;
-    color: rgb(158, 37, 37);
-  }
-  .chat-search > input {
+  .search-small {
     width: 100%;
-    outline: none;
-    border: none;
-    padding: 10px;
-    border-radius: 18px;
+    border-radius: 10px;
   }
-  @media screen and (max-width: 400px) {
-    .chat-search {
-      padding: 5px;
-      width: 90%;
-      border-radius: 10px;
-    }
-   
-  }
+}

@@ -3,13 +3,12 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InputEmoji from 'react-input-emoji';
 import SendIcon from '@mui/icons-material/Send';
-import PhotoIcon from '@mui/icons-material/Photo';
 import '../css/chat-content.css';
 import { users } from '../data/data';
 import { useContext, useState } from 'react';
 import { Context } from '../Context/Context';
 export default function ChatContent() {
-  const { show, setShow, setShowMenu } = useContext(Context);
+  const { show, userProfile, setShow, setShowMenu } = useContext(Context);
   const [message, setMessage] = useState('');
 
   const { id } = useParams();
@@ -27,17 +26,25 @@ export default function ChatContent() {
 
   return (
     <>
-      <div className="chat-content">
+      <div
+        className="chat-content"
+        style={{ backgroundImage: `url(https://cdn.wallpapersafari.com/39/66/Nkoz53.jpg)` }}
+      >
+        <img
+          className="bg-chat"
+          src="https://cdn.wallpapersafari.com/39/66/Nkoz53.jpg"
+          alt=""
+        />
         <div className="chat-header">
           <div className="chat-header-left">
-            <Link to="/" className="icon" onClick={Click}>
-              <KeyboardBackspaceIcon />
+            <Link to="/" onClick={Click}>
+              <KeyboardBackspaceIcon className="icon" />
             </Link>
             <img src={user.avatar} alt="avatar" />
-            <div className="chat-header-name">{user.name}</div>
+            <span className="name">{user.name}</span>
           </div>
           <div className="chat-header-right">
-            <MoreVertIcon />
+            <MoreVertIcon className="icon" />
           </div>
         </div>
         <div className="chat-body">
@@ -55,10 +62,74 @@ export default function ChatContent() {
               <div className="message-text"> I am good.?</div>
               <div className="message-time">12:30</div>
             </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
+            <div className="message own">
+              <div className="message-text"> I am good.?</div>
+              <div className="message-time">12:30</div>
+            </div>
           </div>
         </div>
         <div className="chat-footer">
-          <img src="https://i.imgur.com/hczKIze.png" alt="user" />
+          <img src={userProfile} alt="user" />
           <div className="input">
             <InputEmoji
               value={message}
@@ -69,13 +140,9 @@ export default function ChatContent() {
               placeholder="Type a message"
             />
           </div>
-          <button className="photo">
-            <PhotoIcon className="Icon" />
-          </button>
-          <button className="send">
-            Send
-            <SendIcon className="icon" />
-          </button>
+          <div className="send">
+            <button>send <SendIcon className="icon" /></button>
+          </div>
         </div>
       </div>
     </>

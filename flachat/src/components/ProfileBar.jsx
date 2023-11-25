@@ -1,20 +1,44 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import SettingsIcon from '@mui/icons-material/Settings';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+// import SettingsIcon from '@mui/icons-material/Settings';
 import '../css/profile-bar.css';
+import { useContext } from 'react';
+import { Context } from '../Context/Context';
 
 export default function ProfileBar() {
+  const { user, userName, userProfile, showAccount, setShowAccount } =
+    useContext(Context);
   return (
     <div className="profile-bar">
+      <div className="switch-mode">
+        <div className="mode-left">
+          <span>Mode</span>
+        </div>
+        <div className="mode-right">
+          <div className="mode-light"></div>
+          <div className="mode-dark"></div>
+        </div>
+      </div>
       <div className="profile-wrapper">
         <div className="profile-left">
-          <img src="https://i.imgur.com/hczKIze.png" alt="user" />
+          <img
+            src={userProfile ? userProfile : 'https://i.imgur.com/hczKIze.png'}
+            alt=""
+          />
           <div className="profile-right">
-            <span>Jimin John</span>
-            <KeyboardArrowDownIcon className="icon" />
-            <span>+855 977304279</span>
-            <div className="setting-icon">
-              <SettingsIcon className="icon" />
-            </div>
+            <span>{user?.username || userName}</span>
+            {!showAccount ? (
+              <KeyboardArrowDownIcon
+                className="icon"
+                onClick={() => setShowAccount(true)}
+              />
+            ) : (
+              <KeyboardArrowUpIcon
+                className="icon"
+                onClick={() => setShowAccount(false)}
+              />
+            )}
+            <span className="phone">{user?.phoneNumber}</span>
           </div>
         </div>
       </div>

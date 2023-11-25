@@ -4,8 +4,7 @@
   height: 100vh;
   display: flex;
   margin: 0 auto;
-  background-color: hsl(0, 1%, 23%);
-  z-index: 1;
+  background-color: var(--root-color);
 }
 
 .hide-overlay {
@@ -14,7 +13,7 @@
   left: -100%;
   width: 25%;
   height: 100vh;
-  background-color: rgb(36, 36, 43);
+  background-color: var(--primary-color);
   z-index: 999;
   transition: ease-in-out 0.3s;
 }
@@ -26,14 +25,18 @@
   height: 100vh;
   z-index: 999;
   transition: ease-in-out 0.3s;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
   width: 25%;
   height: 100vh;
-  background-color: rgb(36, 36, 43);
+  background-color: var(--primary-color);
   z-index: 999;
   transition: ease-in-out 0.2s;
 }
@@ -56,6 +59,73 @@
   height: 45px;
   border-radius: 50%;
 }
+
+.accounts {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.account {
+  width: 100%;
+  padding: 5px;
+  border-radius: 0 10px;
+  background-color: #363434;
+  color: #fff;
+}
+.accounts > span {
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+.options {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.option-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.options > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu-bottom {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 @media screen and (max-width: 400px) {
   .menu-header {
     display: flex;
@@ -68,4 +138,6 @@
   .clear-icon {
     display: none;
   }
+ 
+
 }
